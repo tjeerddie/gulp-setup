@@ -1,8 +1,8 @@
 # gulp-setup
 
-##Serving
+## Serving
 You can use `gulp` for starting the tasks.
 
 
-##tasks
+## tasks
 
