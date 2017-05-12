@@ -1,8 +1,9 @@
-var gulp = require('gulp');
-var runSequence = require('run-sequence');
-var localConfig = {
-    scriptsFiles: './resources/js/**/*.js'
-}
+var gulp = require('gulp'),
+    runSequence = require('run-sequence'),
+    localConfig = {
+        scriptsFiles: './resources/assets/js/**/*.js',
+        stylesFiles: './resources/assets/styles/**/*.js'
+    };
 
 gulp.task('watch:scripts', function () {
     gulp.watch(localConfig.scriptsFiles, function () {
@@ -10,4 +11,10 @@ gulp.task('watch:scripts', function () {
     });
 });
 
-gulp.task('watch', ['watch:scripts']);
+gulp.task('watch:styles', function () {
+    gulp.watch(localConfig.scriptsFiles, function () {
+        runSequence('styles', 'inject');
+    });
+});
+
+gulp.task('watch', ['watch:scripts', 'watch:styles']);

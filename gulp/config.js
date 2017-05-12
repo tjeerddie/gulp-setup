@@ -1,8 +1,8 @@
-var notify = require('gulp-notify');
-var beep = require('beepbeep');
-var gutil = require('gulp-util');
+var notify = require('gulp-notify'),
+    beep = require('beepbeep'),
+    gutil = require('gulp-util'),
 
-var env = gutil.env.env || 'development';
+    env = gutil.env.env || 'development';
 
 exports.onError = function (error) {
     notify.onError({
@@ -16,13 +16,13 @@ exports.onError = function (error) {
 function readKeys(filename) {
     var keys = null;
     try {
-        keys = require(filename)
+        keys = require(filename);
     } catch (e) {
         console.error('No config file found at: ' + filename);
     } finally {
         return keys;
     }
-}
+};
 
 exports.getKeys = function () {
     var keys = readKeys('./config/' + env);

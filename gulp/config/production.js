@@ -16,5 +16,11 @@ module.exports = {
    * watch
    * Watch source files and recompile on any change
    */
-  watch: false
+  watch: false,
+
+  /**
+   * sourcemaps
+   * sourcemapping of js and sass
+   */
+  sourcemaps: false
 };

@@ -1,6 +1,6 @@
-var gulp = require('gulp');
-var runSequence = require('run-sequence');
+var gulp = require('gulp'),
+    runSequence = require('run-sequence');
 
 gulp.task('build', function (cb) {
-  runSequence('scripts', 'inject', cb);
+    runSequence('scripts', 'styles', 'inject', cb);
 });
